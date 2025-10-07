@@ -64,6 +64,20 @@ Let's unpack this to explain my decision after having explored several options:
 
 This section walks you through creating a simple Jekyll site on GitHub Pages, with the ability to run local builds and customize the site's template files. It is part runbook, the result of many prototypes and experiments; and part guide, with notes that explain some design decisions. As such, there is plenty of room to do or explain things differently - and better.
 
+1. Start a new shell session to avoid conflicts with the existing environment.
+
+    If you are testing the commands in this blog entry by pasting them into a terminal window, we recommend you start a new shell session first:
+
+    ```shell
+    $ zsh   # Start a new shell session.
+    ```
+
+    The guide uses the `readonly` command, which prevents environment variables, once declared, from being modified or unset within a session. If you make a mistake, you must exit the current session with `$ exit`, start a new one with `$ zsh`, and re-run the corrected commands.
+
+    Alternatively, if you want to change and test the script with different variable settings, you can simply omit the `readonly` keyword from a command statement and avoid having to restart subshells.
+
+    Conversely, you can also clone this [simple shell script Gist](https://gist.github.com/maulomelin/dc590f733ac66688ee91f14acc6b290d) that contains all commands herein in a single script file, make any modifications you want, and run the script as often as you want. When invoked with zsh (i.e., `$ zsh script.zsh`) or directly from a terminal window (i.e., `$ chmod +x script.zsh ; ./script.zsh`), the script (which has the shebang `#!/bin/zsh` as first line) will be executed in a subshell (a child process), and any changes made by the script to environment variables will be contained within the subshell's environment. When the script ends, the subshell will exit and return you back to the parent shell.
+
 1. Install Jekyll on your local environment to run local Jekyll builds.
 
     ```shell
@@ -682,6 +696,12 @@ This section walks you through creating a simple Jekyll site on GitHub Pages, wi
     * The exact URL will depend on the script settings. If no configuration variables were changed, it will be a GitHub Pages user site at `https://{username}.github.io`.
 
     </details>
+
+1. Exit the shell session.
+
+    ```shell
+    $ exit   # Exit the shell session.
+    ```
 
 That's it. You now have created a very simple GitHub Pages site.
 
