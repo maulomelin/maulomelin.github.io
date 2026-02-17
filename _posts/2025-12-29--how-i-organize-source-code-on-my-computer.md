@@ -1,5 +1,9 @@
+---
+title: How I Organize Source Code on My Computer
+---
+# {{ page.title }}
 
-# How I Organize Source Code on My Computer
+<span style="color: #999">_Published: {{ page.date | date: "%Y-%m-%d" }}_</span>
 
 The way I organize source code on my computer has changed over time. It has been influenced by guidelines I have followed at large corporations, standards I've helped establish within growing teams, and simple pragmatic rules I follow on personal projects.
 
